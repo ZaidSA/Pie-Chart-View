@@ -38,30 +38,28 @@ class PieChartView: UIView {
         let viewCenter = CGPoint(x: bounds.size.width*0.5, y: bounds.size.height*0.5)
         
         // enumerate the total value of the segments
-        var valueCount:CGFloat = 0
-        for (_, value) in values {
-            valueCount += value
-        }
-                
-        var cumulativeAngle:CGFloat = -CGFloat(M_PI*0.5) // the starting angle is -90 degrees (top of the circle, as the context is flipped)
+        let valueCount = values.map{$0.value}.reduce(0, combine: +)
+        
+        var startAngle:CGFloat = -CGFloat(M_PI*0.5) // the starting angle is -90 degrees (top of the circle, as the context is flipped)
         for (color, value) in values { // loop through the values array
             
             // set fill color to the segment color
             CGContextSetFillColorWithColor(ctx, color.CGColor)
             
             // update the end angle of the segment
-            let endAngle = cumulativeAngle+CGFloat(M_PI*2)*(value/valueCount)
+            let endAngle = startAngle+CGFloat(M_PI*2)*(value/valueCount)
             
             // move to the center of the pie chart
             CGContextMoveToPoint(ctx, viewCenter.x, viewCenter.y)
             
             // add arc from the center for each segment
-            CGContextAddArc(ctx, viewCenter.x, viewCenter.y, radius, cumulativeAngle, endAngle, 0)
+            CGContextAddArc(ctx, viewCenter.x, viewCenter.y, radius, startAngle, endAngle, 0)
             
             // fill segment
             CGContextFillPath(ctx)
             
-            cumulativeAngle = endAngle
+            // update starting angle of the next segment to the ending angle of this segment
+            startAngle = endAngle
         }
     }
 }
