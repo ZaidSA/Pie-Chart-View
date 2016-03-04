@@ -11,7 +11,7 @@ import UIKit
 class PieChartView: UIView {
 
     /// An array of tuples representing the colors of the segments, and the values (the ratios will automatically be calculated)
-    var values : [(color:UIColor, value:CGFloat)] = [(color:UIColor, value:CGFloat)]() {
+    var values = [(color:UIColor, value:CGFloat)]() {
         didSet {
             self.setNeedsDisplay() // re-draw view when the values get set
         }
@@ -19,7 +19,7 @@ class PieChartView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.whiteColor()
+        opaque = false
     }
     
     required init?(coder aDecoder: NSCoder) {
