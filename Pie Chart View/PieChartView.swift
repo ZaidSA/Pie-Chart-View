@@ -37,10 +37,12 @@ class PieChartView: UIView {
         // center of the view
         let viewCenter = CGPoint(x: bounds.size.width*0.5, y: bounds.size.height*0.5)
         
-        // enumerate the total value of the segments
+        // enumerate the total value of the segments (by first generating an array of CGFloat values from the tuple, then using reduce to sum them)
         let valueCount = values.map{$0.value}.reduce(0, combine: +)
         
-        var startAngle:CGFloat = -CGFloat(M_PI*0.5) // the starting angle is -90 degrees (top of the circle, as the context is flipped)
+        // the starting angle is -90 degrees (top of the circle, as the context is flipped). By default, 0 is the right hand side of the circle.
+        var startAngle:CGFloat = -CGFloat(M_PI*0.5)
+        
         for (color, value) in values { // loop through the values array
             
             // set fill color to the segment color
@@ -52,7 +54,7 @@ class PieChartView: UIView {
             // move to the center of the pie chart
             CGContextMoveToPoint(ctx, viewCenter.x, viewCenter.y)
             
-            // add arc from the center for each segment
+            // add arc from the center for each segment (anticlockwise is specified for the arc, but as the view flips the context, it will produce a clockwise arc)
             CGContextAddArc(ctx, viewCenter.x, viewCenter.y, radius, startAngle, endAngle, 0)
             
             // fill segment
