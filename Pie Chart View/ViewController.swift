@@ -25,12 +25,6 @@ class ViewController: UIViewController {
             (UIColor(red: 0.0, green: 222.0/255.0, blue: 1.0, alpha: 1.0), 10)
         ]
         
-        pieChartView.values = [
-            (UIColor.redColor(), 57),
-            (UIColor.blueColor(), 30),
-            (UIColor.greenColor(), 25),
-            (UIColor.yellowColor(), 40)
-        ]
         view.addSubview(pieChartView)
     
     }
