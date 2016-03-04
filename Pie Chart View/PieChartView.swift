@@ -19,7 +19,7 @@ class PieChartView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        opaque = false
+        opaque = false // when overriding drawRect, you must specify this to maintain transparency.
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,7 +40,7 @@ class PieChartView: UIView {
         // enumerate the total value of the segments (by first generating an array of CGFloat values from the tuple, then using reduce to sum them)
         let valueCount = values.map{$0.value}.reduce(0, combine: +)
         
-        // the starting angle is -90 degrees (top of the circle, as the context is flipped). By default, 0 is the right hand side of the circle.
+        // the starting angle is -90 degrees (top of the circle, as the context is flipped). By default, 0 is the right hand side of the circle, with the positive angle being in an anti-clockwise direction (same as a unit circle in maths).
         var startAngle:CGFloat = -CGFloat(M_PI*0.5)
         
         for (color, value) in values { // loop through the values array
