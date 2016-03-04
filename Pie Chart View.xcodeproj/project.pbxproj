@@ -14,6 +14,7 @@
 		1C212D441C89F46E00FC78FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C212D421C89F46E00FC78FC /* LaunchScreen.storyboard */; };
 		1C212D4F1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D4E1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift */; };
 		1C212D5A1C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */; };
+		1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D671C89F48100FC78FC /* PieChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1C212D551C89F46E00FC78FC /* Pie Chart ViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pie Chart ViewUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie_Chart_ViewUITests.swift; sourceTree = "<group>"; };
 		1C212D5B1C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C212D671C89F48100FC78FC /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				1C212D391C89F46E00FC78FC /* AppDelegate.swift */,
 				1C212D3B1C89F46E00FC78FC /* ViewController.swift */,
+				1C212D671C89F48100FC78FC /* PieChartView.swift */,
 				1C212D3D1C89F46E00FC78FC /* Main.storyboard */,
 				1C212D401C89F46E00FC78FC /* Assets.xcassets */,
 				1C212D421C89F46E00FC78FC /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */,
 				1C212D3C1C89F46E00FC78FC /* ViewController.swift in Sources */,
 				1C212D3A1C89F46E00FC78FC /* AppDelegate.swift in Sources */,
 			);
