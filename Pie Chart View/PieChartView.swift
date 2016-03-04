@@ -8,10 +8,19 @@
 
 import UIKit
 
+struct Segment {
+    
+    /// The color of the segment
+    var color : UIColor
+    
+    /// The value of the segment
+    var value : CGFloat
+}
+
 class PieChartView: UIView {
 
     /// An array of tuples representing the colors of the segments, and the values (the ratios will automatically be calculated)
-    var values = [(color:UIColor, value:CGFloat)]() {
+    var segments = [Segment]() {
         didSet {
             self.setNeedsDisplay() // re-draw view when the values get set
         }
@@ -38,18 +47,18 @@ class PieChartView: UIView {
         let viewCenter = CGPoint(x: bounds.size.width*0.5, y: bounds.size.height*0.5)
         
         // enumerate the total value of the segments (by first generating an array of CGFloat values from the tuple, then using reduce to sum them)
-        let valueCount = values.map{$0.value}.reduce(0, combine: +)
+        let valueCount = segments.map{$0.value}.reduce(0, combine: +)
         
         // the starting angle is -90 degrees (top of the circle, as the context is flipped). By default, 0 is the right hand side of the circle, with the positive angle being in an anti-clockwise direction (same as a unit circle in maths).
         var startAngle:CGFloat = -CGFloat(M_PI*0.5)
         
-        for (color, value) in values { // loop through the values array
+        for segment in segments { // loop through the values array
             
             // set fill color to the segment color
-            CGContextSetFillColorWithColor(ctx, color.CGColor)
+            CGContextSetFillColorWithColor(ctx, segment.color.CGColor)
             
             // update the end angle of the segment
-            let endAngle = startAngle+CGFloat(M_PI*2)*(value/valueCount)
+            let endAngle = startAngle+CGFloat(M_PI*2)*(segment.value/valueCount)
             
             // move to the center of the pie chart
             CGContextMoveToPoint(ctx, viewCenter.x, viewCenter.y)
