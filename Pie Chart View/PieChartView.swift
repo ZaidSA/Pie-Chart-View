@@ -8,6 +8,18 @@
 
 import UIKit
 
+private extension CGFloat {
+    
+    /// format CGFloats to be displayed (removes excess zeros)
+    var formatForDisplay:NSString {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 1
+        return formatter.stringFromNumber(self) ?? ""
+    }
+}
+
 /// Defines a segment of the pie chart
 struct Segment {
     
@@ -32,6 +44,13 @@ class PieChartView: UIView {
     
     /// Defines whether the segment labels should be shown when drawing the pie chart
     var showSegmentLabels = true {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// Defines whether the segment labels will show the value of the segment in brackets
+    var showSegmentValueInLabel = false {
         didSet {
             self.setNeedsDisplay()
         }
@@ -104,11 +123,14 @@ class PieChartView: UIView {
                 // get the angle midpoint
                 let halfAngle = startAngle+(endAngle-startAngle)*0.5;
                 
-                // get the 'center' of the segment. It's slightly biased to the outer edge, as it's wider.
-                let segmentCenter = CGPoint(x: viewCenter.x+radius*0.65*cos(halfAngle), y: viewCenter.y+radius*0.65*sin(halfAngle))
+                // the ratio of how far away from the center of the pie chart the text will appear
+                let textPositionValue:CGFloat = 0.67
                 
-                // text to render, as an explicit NSString
-                let textToRender : NSString = segment.name
+                // get the 'center' of the segment. It's slightly biased to the outer edge, as it's wider.
+                let segmentCenter = CGPoint(x: viewCenter.x+radius*textPositionValue*cos(halfAngle), y: viewCenter.y+radius*textPositionValue*sin(halfAngle))
+                
+                // text to render, as an explicit NSString. Formats the segment value, if needed to be displayed.
+                let textToRender : NSString = showSegmentValueInLabel ? NSString(format: "%@ (%@)", segment.name, segment.value.formatForDisplay):segment.name
                 
                 // get the color components of the segement color
                 let colorComponents = CGColorGetComponents(segment.color.CGColor)

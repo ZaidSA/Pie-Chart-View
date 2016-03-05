@@ -26,6 +26,9 @@ class ViewController: UIViewController {
             Segment(color: UIColor(red: 0.0, green: 100.0/255.0, blue: 1.0, alpha: 1.0), name:"Blue", value: 38)
         ]
         
+        pieChartView.segmentLabelFont = UIFont.systemFontOfSize(18)
+        pieChartView.showSegmentValueInLabel = true
+        
         view.addSubview(pieChartView)
     
     }
