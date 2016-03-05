@@ -8,10 +8,14 @@
 
 import UIKit
 
+/// Defines a segment of the pie chart
 struct Segment {
     
     /// The color of the segment
     var color : UIColor
+    
+    /// The name of the segment
+    var name : String
     
     /// The value of the segment
     var value : CGFloat
@@ -25,6 +29,31 @@ class PieChartView: UIView {
             self.setNeedsDisplay() // re-draw view when the values get set
         }
     }
+    
+    /// Defines whether the segment labels should be shown when drawing the pie chart
+    var showSegmentLabels = true {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The font to be used on the segment labels
+    var segmentLabelFont = UIFont.systemFontOfSize(20) {
+        didSet {
+            textAttributes[NSFontAttributeName] = segmentLabelFont
+            self.setNeedsDisplay()
+        }
+    }
+    
+    private lazy var paragraphStyle:NSParagraphStyle = {
+        var p = NSMutableParagraphStyle()
+        p.alignment = .Center
+        return p.copy() as! NSParagraphStyle
+    }()
+    
+    private lazy var textAttributes:[String:AnyObject] = {
+        return [NSParagraphStyleAttributeName:self.paragraphStyle, NSFontAttributeName:self.segmentLabelFont]
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,7 +81,8 @@ class PieChartView: UIView {
         // the starting angle is -90 degrees (top of the circle, as the context is flipped). By default, 0 is the right hand side of the circle, with the positive angle being in an anti-clockwise direction (same as a unit circle in maths).
         var startAngle:CGFloat = -CGFloat(M_PI*0.5)
         
-        for segment in segments { // loop through the values array
+        // loop through the values array
+        for segment in segments {
             
             // set fill color to the segment color
             CGContextSetFillColorWithColor(ctx, segment.color.CGColor)
@@ -68,6 +98,39 @@ class PieChartView: UIView {
             
             // fill segment
             CGContextFillPath(ctx)
+            
+            if showSegmentLabels { // do text rendering
+                
+                // get the angle midpoint
+                let halfAngle = startAngle+(endAngle-startAngle)*0.5;
+                
+                // get the center of the segment
+                let segmentCenter = CGPoint(x: viewCenter.x+radius*0.65*cos(halfAngle), y: viewCenter.y+radius*0.65*sin(halfAngle))
+                
+                // text to render, as an explicit NSString
+                let textToRender : NSString = segment.name
+                
+                // auto-color detection
+                let colorComponents = CGColorGetComponents(segment.color.CGColor)
+                
+                // get the average brightness of the color
+                let averageRGB = (colorComponents[0]+colorComponents[1]+colorComponents[2])/3.0
+                
+                if averageRGB > 0.7 { // if too light, use black. If too dark, use white
+                    textAttributes[NSForegroundColorAttributeName] = UIColor.blackColor()
+                } else {
+                    textAttributes[NSForegroundColorAttributeName] = UIColor.whiteColor()
+                }
+                
+                // the rect that the text will occupy
+                var renderRect = CGRect(origin: CGPointZero, size: textToRender.sizeWithAttributes(textAttributes))
+                
+                // center the origin of the rect
+                renderRect.origin = CGPoint(x: segmentCenter.x-renderRect.size.width*0.5, y: segmentCenter.y-renderRect.size.height*0.5)
+                
+                // draw text in the rect, with the given attributes
+                textToRender.drawInRect(renderRect, withAttributes: textAttributes)
+            }
             
             // update starting angle of the next segment to the ending angle of this segment
             startAngle = endAngle
