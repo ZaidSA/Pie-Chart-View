@@ -104,13 +104,13 @@ class PieChartView: UIView {
                 // get the angle midpoint
                 let halfAngle = startAngle+(endAngle-startAngle)*0.5;
                 
-                // get the center of the segment
+                // get the 'center' of the segment. It's slightly biased to the outer edge, as it's wider.
                 let segmentCenter = CGPoint(x: viewCenter.x+radius*0.65*cos(halfAngle), y: viewCenter.y+radius*0.65*sin(halfAngle))
                 
                 // text to render, as an explicit NSString
                 let textToRender : NSString = segment.name
                 
-                // auto-color detection
+                // get the color components of the segement color
                 let colorComponents = CGColorGetComponents(segment.color.CGColor)
                 
                 // get the average brightness of the color
@@ -122,7 +122,7 @@ class PieChartView: UIView {
                     textAttributes[NSForegroundColorAttributeName] = UIColor.whiteColor()
                 }
                 
-                // the rect that the text will occupy
+                // the bounds that the text will occupy
                 var renderRect = CGRect(origin: CGPointZero, size: textToRender.sizeWithAttributes(textAttributes))
                 
                 // center the origin of the rect
