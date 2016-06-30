@@ -15,6 +15,7 @@
 		1C212D4F1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D4E1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift */; };
 		1C212D5A1C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */; };
 		1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D671C89F48100FC78FC /* PieChartView.swift */; };
+		1C88C5181D25BF2C00167526 /* SimplePieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie_Chart_ViewUITests.swift; sourceTree = "<group>"; };
 		1C212D5B1C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C212D671C89F48100FC78FC /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePieChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				1C212D391C89F46E00FC78FC /* AppDelegate.swift */,
 				1C212D3B1C89F46E00FC78FC /* ViewController.swift */,
 				1C212D671C89F48100FC78FC /* PieChartView.swift */,
+				1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */,
 				1C212D3D1C89F46E00FC78FC /* Main.storyboard */,
 				1C212D401C89F46E00FC78FC /* Assets.xcassets */,
 				1C212D421C89F46E00FC78FC /* LaunchScreen.storyboard */,
@@ -191,18 +194,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Redonkulous Apps";
 				TargetAttributes = {
 					1C212D351C89F46E00FC78FC = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					1C212D491C89F46E00FC78FC = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1C212D351C89F46E00FC78FC;
 					};
 					1C212D541C89F46E00FC78FC = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1C212D351C89F46E00FC78FC;
 					};
 				};
@@ -259,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C88C5181D25BF2C00167526 /* SimplePieChartView.swift in Sources */,
 				1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */,
 				1C212D3C1C89F46E00FC78FC /* ViewController.swift in Sources */,
 				1C212D3A1C89F46E00FC78FC /* AppDelegate.swift in Sources */,
@@ -409,6 +416,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -420,6 +428,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -431,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Chart View.app/Pie Chart View";
 			};
 			name = Debug;
@@ -443,6 +454,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Chart View.app/Pie Chart View";
 			};
 			name = Release;
@@ -454,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pie Chart View";
 			};
 			name = Debug;
@@ -465,6 +479,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pie Chart View";
 			};
 			name = Release;
@@ -488,6 +504,7 @@
 				1C212D601C89F46E00FC78FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C212D611C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +513,7 @@
 				1C212D631C89F46E00FC78FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C212D641C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +522,7 @@
 				1C212D661C89F46E00FC78FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
