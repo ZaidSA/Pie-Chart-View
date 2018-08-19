@@ -33,12 +33,6 @@ extension Collection where Element : Numeric {
   }
 }
 
-extension Collection where Element : FloatingPoint {
-  func mean() -> Element {
-    return sum() / Element(count)
-  }
-}
-
 extension NumberFormatter {
   static let toOneDecimalPlace: NumberFormatter = {
     let formatter = NumberFormatter()
