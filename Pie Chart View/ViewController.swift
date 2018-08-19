@@ -33,7 +33,6 @@ class ViewController : UIViewController {
     ]
 
     pieChartView.segmentLabelFont = .systemFont(ofSize: 10)
-    pieChartView.showSegmentValueInLabel = true
 
     view.addSubview(pieChartView)
 

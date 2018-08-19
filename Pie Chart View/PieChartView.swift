@@ -100,6 +100,28 @@ extension UIColor.RGBAComponents {
   }
 }
 
+struct SegmentLabelFormatter {
+  private let _getLabel: (LabelledSegment) -> String
+  init(_ getLabel: @escaping (LabelledSegment) -> String) {
+    self._getLabel = getLabel
+  }
+  func getLabel(for segment: LabelledSegment) -> String {
+    return _getLabel(segment)
+  }
+}
+
+extension SegmentLabelFormatter {
+  /// Display the segment's name along with its value in parentheses.
+  static let nameWithValue = SegmentLabelFormatter { segment in
+    let formattedValue = NumberFormatter.toOneDecimalPlace
+      .string(from: segment.value as NSNumber) ?? "\(segment.value)"
+    return "\(segment.name) (\(formattedValue))"
+  }
+
+  /// Only display the segment's name.
+  static let nameOnly = SegmentLabelFormatter { $0.name }
+}
+
 class PieChartView : UIView {
 
   /// An array of structs representing the segments of the pie chart.
@@ -114,12 +136,6 @@ class PieChartView : UIView {
     didSet { setNeedsDisplay() }
   }
 
-  /// Defines whether the segment labels will show the value of the segment in
-  /// brackets.
-  var showSegmentValueInLabel = false {
-    didSet { setNeedsDisplay() }
-  }
-
   /// The font to be used on the segment labels
   var segmentLabelFont = UIFont.systemFont(ofSize: 20) {
     didSet {
@@ -128,7 +144,8 @@ class PieChartView : UIView {
     }
   }
 
-  var segmentValueFormatter = NumberFormatter.toOneDecimalPlace {
+  /// A formatter describing how to map a segment to its displayed label.
+  var segmentLabelFormatter = SegmentLabelFormatter.nameWithValue {
     didSet { setNeedsDisplay() }
   }
 
@@ -156,16 +173,6 @@ class PieChartView : UIView {
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("Not supported.")
-  }
-
-  private func getValueString(for segment: LabelledSegment) -> String {
-    if showSegmentLabels {
-      let formatted = segmentValueFormatter
-        .string(from: segment.value as NSNumber) ?? "\(segment.value)"
-      return "\(segment.name) (\(formatted))"
-    } else {
-      return segment.name
-    }
   }
 
   override func draw(_ rect: CGRect) {
@@ -226,7 +233,8 @@ class PieChartView : UIView {
 
         // Text to render – the segment value is formatted to 1dp if needed to
         // be displayed.
-        let textToRender = getValueString(for: segment) as NSString
+        let textToRender = segmentLabelFormatter
+          .getLabel(for: segment) as NSString
 
         // If too light, use black. If too dark, use white.
         textAttributes[.foregroundColor] =
