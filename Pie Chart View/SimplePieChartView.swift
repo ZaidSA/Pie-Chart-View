@@ -8,7 +8,6 @@
 
 // Simplified version of PieChartView.
 
-/*
 import UIKit
 
 struct Segment {
@@ -21,7 +20,7 @@ struct Segment {
   var value: CGFloat
 }
 
-class PieChartView : UIView {
+class SimplePieChartView : UIView {
 
   /// An array of structs representing the segments of the pie chart.
   var segments = [Segment]() {
@@ -87,4 +86,3 @@ class PieChartView : UIView {
   }
 }
 
-*/

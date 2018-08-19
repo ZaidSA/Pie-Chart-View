@@ -9,7 +9,7 @@
 import UIKit
 
 /// Defines a segment of the pie chart.
-struct Segment {
+struct LabelledSegment {
 
   /// The color of the segment.
   var color: UIColor
@@ -97,7 +97,7 @@ extension UIColor.RGBAComponents {
 class PieChartView : UIView {
 
   /// An array of structs representing the segments of the pie chart.
-  var segments = [Segment]() {
+  var segments = [LabelledSegment]() {
     // Re-draw view when the values get set.
     didSet { setNeedsDisplay() }
   }
@@ -152,7 +152,7 @@ class PieChartView : UIView {
     fatalError("Not supported.")
   }
 
-  private func getValueString(for segment: Segment) -> String {
+  private func getValueString(for segment: LabelledSegment) -> String {
     if showSegmentLabels {
       let formatted = segmentValueFormatter
         .string(from: segment.value as NSNumber) ?? "\(segment.value)"
