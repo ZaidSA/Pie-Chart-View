@@ -4,7 +4,7 @@ A simple `UIView` subclass that creates a pie chart
 
 `PieChartView.swift`:
 
-![Pie Chart](../master/Screenshots/withLabels.png)
+![pie](../master/Screenshots/withLabels.png)
 
 `SimplePieChartView.swift`:
 
