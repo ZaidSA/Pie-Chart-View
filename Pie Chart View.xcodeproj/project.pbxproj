@@ -12,28 +12,9 @@
 		1C212D3F1C89F46E00FC78FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C212D3D1C89F46E00FC78FC /* Main.storyboard */; };
 		1C212D411C89F46E00FC78FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C212D401C89F46E00FC78FC /* Assets.xcassets */; };
 		1C212D441C89F46E00FC78FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C212D421C89F46E00FC78FC /* LaunchScreen.storyboard */; };
-		1C212D4F1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D4E1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift */; };
-		1C212D5A1C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */; };
 		1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D671C89F48100FC78FC /* PieChartView.swift */; };
 		1C88C5181D25BF2C00167526 /* SimplePieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1C212D4B1C89F46E00FC78FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C212D2E1C89F46E00FC78FC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C212D351C89F46E00FC78FC;
-			remoteInfo = "Pie Chart View";
-		};
-		1C212D561C89F46E00FC78FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C212D2E1C89F46E00FC78FC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C212D351C89F46E00FC78FC;
-			remoteInfo = "Pie Chart View";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1C212D361C89F46E00FC78FC /* Pie Chart View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pie Chart View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,32 +24,12 @@
 		1C212D401C89F46E00FC78FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C212D431C89F46E00FC78FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C212D451C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C212D4A1C89F46E00FC78FC /* Pie Chart ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pie Chart ViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C212D4E1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie_Chart_ViewTests.swift; sourceTree = "<group>"; };
-		1C212D501C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C212D551C89F46E00FC78FC /* Pie Chart ViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pie Chart ViewUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie_Chart_ViewUITests.swift; sourceTree = "<group>"; };
-		1C212D5B1C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C212D671C89F48100FC78FC /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePieChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1C212D331C89F46E00FC78FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C212D471C89F46E00FC78FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C212D521C89F46E00FC78FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,8 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				1C212D381C89F46E00FC78FC /* Pie Chart View */,
-				1C212D4D1C89F46E00FC78FC /* Pie Chart ViewTests */,
-				1C212D581C89F46E00FC78FC /* Pie Chart ViewUITests */,
 				1C212D371C89F46E00FC78FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				1C212D361C89F46E00FC78FC /* Pie Chart View.app */,
-				1C212D4A1C89F46E00FC78FC /* Pie Chart ViewTests.xctest */,
-				1C212D551C89F46E00FC78FC /* Pie Chart ViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,24 +68,6 @@
 				1C212D451C89F46E00FC78FC /* Info.plist */,
 			);
 			path = "Pie Chart View";
-			sourceTree = "<group>";
-		};
-		1C212D4D1C89F46E00FC78FC /* Pie Chart ViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				1C212D4E1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift */,
-				1C212D501C89F46E00FC78FC /* Info.plist */,
-			);
-			path = "Pie Chart ViewTests";
-			sourceTree = "<group>";
-		};
-		1C212D581C89F46E00FC78FC /* Pie Chart ViewUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1C212D591C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift */,
-				1C212D5B1C89F46E00FC78FC /* Info.plist */,
-			);
-			path = "Pie Chart ViewUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,42 +90,6 @@
 			productReference = 1C212D361C89F46E00FC78FC /* Pie Chart View.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1C212D491C89F46E00FC78FC /* Pie Chart ViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C212D611C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewTests" */;
-			buildPhases = (
-				1C212D461C89F46E00FC78FC /* Sources */,
-				1C212D471C89F46E00FC78FC /* Frameworks */,
-				1C212D481C89F46E00FC78FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C212D4C1C89F46E00FC78FC /* PBXTargetDependency */,
-			);
-			name = "Pie Chart ViewTests";
-			productName = "Pie Chart ViewTests";
-			productReference = 1C212D4A1C89F46E00FC78FC /* Pie Chart ViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1C212D541C89F46E00FC78FC /* Pie Chart ViewUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C212D641C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewUITests" */;
-			buildPhases = (
-				1C212D511C89F46E00FC78FC /* Sources */,
-				1C212D521C89F46E00FC78FC /* Frameworks */,
-				1C212D531C89F46E00FC78FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C212D571C89F46E00FC78FC /* PBXTargetDependency */,
-			);
-			name = "Pie Chart ViewUITests";
-			productName = "Pie Chart ViewUITests";
-			productReference = 1C212D551C89F46E00FC78FC /* Pie Chart ViewUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,22 +97,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Redonkulous Apps";
 				TargetAttributes = {
 					1C212D351C89F46E00FC78FC = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
-					};
-					1C212D491C89F46E00FC78FC = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
-						TestTargetID = 1C212D351C89F46E00FC78FC;
-					};
-					1C212D541C89F46E00FC78FC = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
-						TestTargetID = 1C212D351C89F46E00FC78FC;
+						DevelopmentTeam = JWU3M53NG6;
+						LastSwiftMigration = 1000;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -227,8 +122,6 @@
 			projectRoot = "";
 			targets = (
 				1C212D351C89F46E00FC78FC /* Pie Chart View */,
-				1C212D491C89F46E00FC78FC /* Pie Chart ViewTests */,
-				1C212D541C89F46E00FC78FC /* Pie Chart ViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,20 +134,6 @@
 				1C212D441C89F46E00FC78FC /* LaunchScreen.storyboard in Resources */,
 				1C212D411C89F46E00FC78FC /* Assets.xcassets in Resources */,
 				1C212D3F1C89F46E00FC78FC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C212D481C89F46E00FC78FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C212D531C89F46E00FC78FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,36 +151,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C212D461C89F46E00FC78FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C212D4F1C89F46E00FC78FC /* Pie_Chart_ViewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C212D511C89F46E00FC78FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C212D5A1C89F46E00FC78FC /* Pie_Chart_ViewUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1C212D4C1C89F46E00FC78FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C212D351C89F46E00FC78FC /* Pie Chart View */;
-			targetProxy = 1C212D4B1C89F46E00FC78FC /* PBXContainerItemProxy */;
-		};
-		1C212D571C89F46E00FC78FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C212D351C89F46E00FC78FC /* Pie Chart View */;
-			targetProxy = 1C212D561C89F46E00FC78FC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1C212D3D1C89F46E00FC78FC /* Main.storyboard */ = {
@@ -332,14 +182,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -367,6 +225,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -380,14 +239,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -407,6 +274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -416,11 +284,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JWU3M53NG6;
 				INFOPLIST_FILE = "Pie Chart View/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -428,64 +301,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JWU3M53NG6;
 				INFOPLIST_FILE = "Pie Chart View/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-View";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		1C212D621C89F46E00FC78FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Pie Chart ViewTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Chart View.app/Pie Chart View";
-			};
-			name = Debug;
-		};
-		1C212D631C89F46E00FC78FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Pie Chart ViewTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Chart View.app/Pie Chart View";
-			};
-			name = Release;
-		};
-		1C212D651C89F46E00FC78FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Pie Chart ViewUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Pie Chart View";
-			};
-			name = Debug;
-		};
-		1C212D661C89F46E00FC78FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Pie Chart ViewUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redonkulousapps.Pie-Chart-ViewUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Pie Chart View";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -506,24 +332,6 @@
 			buildConfigurations = (
 				1C212D5F1C89F46E00FC78FC /* Debug */,
 				1C212D601C89F46E00FC78FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C212D611C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C212D621C89F46E00FC78FC /* Debug */,
-				1C212D631C89F46E00FC78FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C212D641C89F46E00FC78FC /* Build configuration list for PBXNativeTarget "Pie Chart ViewUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C212D651C89F46E00FC78FC /* Debug */,
-				1C212D661C89F46E00FC78FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
