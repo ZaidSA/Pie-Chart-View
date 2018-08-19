@@ -14,6 +14,7 @@
 		1C212D441C89F46E00FC78FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C212D421C89F46E00FC78FC /* LaunchScreen.storyboard */; };
 		1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C212D671C89F48100FC78FC /* PieChartView.swift */; };
 		1C88C5181D25BF2C00167526 /* SimplePieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */; };
+		1CB569A62129E8F800F96DDD /* CompatibilityShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB569A52129E8F800F96DDD /* CompatibilityShims.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1C212D451C89F46E00FC78FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C212D671C89F48100FC78FC /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePieChartView.swift; sourceTree = "<group>"; };
+		1CB569A52129E8F800F96DDD /* CompatibilityShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityShims.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				1C212D391C89F46E00FC78FC /* AppDelegate.swift */,
 				1C212D3B1C89F46E00FC78FC /* ViewController.swift */,
 				1C212D671C89F48100FC78FC /* PieChartView.swift */,
+				1CB569A52129E8F800F96DDD /* CompatibilityShims.swift */,
 				1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */,
 				1C212D3D1C89F46E00FC78FC /* Main.storyboard */,
 				1C212D401C89F46E00FC78FC /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C88C5181D25BF2C00167526 /* SimplePieChartView.swift in Sources */,
+				1CB569A62129E8F800F96DDD /* CompatibilityShims.swift in Sources */,
 				1C212D681C89F48100FC78FC /* PieChartView.swift in Sources */,
 				1C212D3C1C89F46E00FC78FC /* ViewController.swift in Sources */,
 				1C212D3A1C89F46E00FC78FC /* AppDelegate.swift in Sources */,
