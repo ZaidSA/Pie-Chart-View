@@ -96,7 +96,7 @@ extension UIColor {
 
 extension UIColor.RGBAComponents {
   var brightness: CGFloat {
-    return red + green + blue / 3
+    return (red + green + blue) / 3
   }
 }
 
@@ -230,7 +230,7 @@ class PieChartView : UIView {
 
         // If too light, use black. If too dark, use white.
         textAttributes[.foregroundColor] =
-          segment.color.brightness > 0.7 ? UIColor.black : UIColor.white
+          segment.color.brightness > 0.4 ? UIColor.black : UIColor.white
 
         let textRenderSize = textToRender.size(withAttributes: textAttributes)
 
