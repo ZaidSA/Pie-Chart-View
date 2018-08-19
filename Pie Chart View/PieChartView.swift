@@ -8,6 +8,12 @@
 
 import UIKit
 
+#if !swift(>=4.2)
+extension NSAttributedString {
+  typealias Key = NSAttributedStringKey
+}
+#endif
+
 /// Defines a segment of the pie chart.
 struct LabelledSegment {
 
