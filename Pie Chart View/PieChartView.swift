@@ -174,6 +174,10 @@ class PieChartView : UIView {
     // Center of the view.
     let viewCenter = bounds.center
 
+  private func forEachSegment(
+    _ body: (LabelledSegment, _ startAngle: CGFloat,
+             _ endAngle: CGFloat) -> Void
+  ) {
     // Enumerate the total value of the segments by using reduce to sum them.
     let valueCount = segments.lazy.map { $0.value }.sum()
 
@@ -185,7 +189,6 @@ class PieChartView : UIView {
 
     // Loop through the values array.
     for segment in segments {
-
       // Get the end angle of this segment.
       let endAngle = startAngle + .pi * 2 * (segment.value / valueCount)
       defer {
@@ -193,6 +196,24 @@ class PieChartView : UIView {
         // segment.
         startAngle = endAngle
       }
+      
+      body(segment, startAngle, endAngle)
+    }
+  }
+
+  override func draw(_ rect: CGRect) {
+
+    // Get current context.
+    guard let ctx = UIGraphicsGetCurrentContext() else { return }
+
+    // Radius is the half the frame's width or height (whichever is smallest).
+    let radius = min(frame.width, frame.height) * 0.5
+
+    // Center of the view.
+    let viewCenter = bounds.center
+
+    // Loop through the values array.
+    forEachSegment { segment, startAngle, endAngle in
 
       // Set fill color to the segment color.
       ctx.setFillColor(segment.color.cgColor)
@@ -208,16 +229,18 @@ class PieChartView : UIView {
 
       // Fill segment.
       ctx.fillPath()
-
-      if showSegmentLabels { // Do text rendering.
-
+    }
+    if showSegmentLabels { // Do text rendering.
+      forEachSegment { segment, startAngle, endAngle in
         // Get the angle midpoint.
         let halfAngle = startAngle + (endAngle - startAngle) * 0.5;
 
-        // Get the 'center' of the segment. It's slightly biased to the outer
-        // edge, as it's wider.
-        let segmentCenter = viewCenter
-          .projected(by: radius * textPositionOffset, angle: halfAngle)
+        // Get the 'center' of the segment.
+        var segmentCenter = viewCenter
+        if segments.count > 1 {
+          segmentCenter = segmentCenter
+            .projected(by: radius * textPositionOffset, angle: halfAngle)
+        }
 
         // Text to render – the segment value is formatted to 1dp if needed to
         // be displayed.
