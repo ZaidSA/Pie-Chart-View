@@ -62,8 +62,8 @@
 			children = (
 				1C212D391C89F46E00FC78FC /* AppDelegate.swift */,
 				1C212D3B1C89F46E00FC78FC /* ViewController.swift */,
-				1C212D671C89F48100FC78FC /* PieChartView.swift */,
 				1CB569A52129E8F800F96DDD /* CompatibilityShims.swift */,
+				1C212D671C89F48100FC78FC /* PieChartView.swift */,
 				1C88C5171D25BF2C00167526 /* SimplePieChartView.swift */,
 				1C212D3D1C89F46E00FC78FC /* Main.storyboard */,
 				1C212D401C89F46E00FC78FC /* Assets.xcassets */,

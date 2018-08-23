@@ -31,12 +31,27 @@ class SimplePieChartView : UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    initialize()
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    initialize()
+  }
+
+  private func initialize() {
     // When overriding drawRect, you must specify this to maintain transparency.
     isOpaque = false
   }
 
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("Not supported.")
+  override func prepareForInterfaceBuilder() {
+    // Show sample data.
+    segments = [
+      Segment(color: .red,    value: 57),
+      Segment(color: .blue,   value: 30),
+      Segment(color: .green,  value: 25),
+      Segment(color: .yellow, value: 40)
+    ]
   }
 
   override func draw(_ rect: CGRect) {

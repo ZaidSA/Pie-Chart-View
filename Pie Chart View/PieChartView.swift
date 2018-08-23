@@ -110,6 +110,7 @@ extension SegmentLabelFormatter {
   static let nameOnly = SegmentLabelFormatter { $0.name }
 }
 
+@IBDesignable
 class PieChartView : UIView {
 
   /// An array of structs representing the segments of the pie chart.
@@ -120,12 +121,14 @@ class PieChartView : UIView {
 
   /// Defines whether the segment labels should be shown when drawing the pie
   /// chart.
-  var showSegmentLabels = true {
+  @IBInspectable
+  var showSegmentLabels: Bool = true {
     didSet { setNeedsDisplay() }
   }
 
   /// The font to be used on the segment labels
-  var segmentLabelFont = UIFont.systemFont(ofSize: 20) {
+  @IBInspectable
+  var segmentLabelFont: UIFont = UIFont.systemFont(ofSize: 14) {
     didSet {
       textAttributes[.font] = segmentLabelFont
       setNeedsDisplay()
@@ -139,6 +142,7 @@ class PieChartView : UIView {
 
   // The ratio of how far away from the center of the pie chart the text
   // will appear.
+  @IBInspectable
   var textPositionOffset: CGFloat = 0.67 {
     didSet { setNeedsDisplay() }
   }
@@ -155,24 +159,30 @@ class PieChartView : UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    initialize()
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    initialize()
+  }
+
+  private func initialize() {
     // When overriding drawRect, you must specify this to maintain transparency.
     isOpaque = false
   }
 
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("Not supported.")
+  override func prepareForInterfaceBuilder() {
+    // Show sample data.
+    segments = [
+      LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.121568627, blue: 0.28627451, alpha: 1.0), name: "Red",        value: 57.56),
+      LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.541176471, blue: 0.0, alpha: 1.0), name: "Orange",     value: 30),
+      LabelledSegment(color: #colorLiteral(red: 0.478431373, green: 0.423529412, blue: 1.0, alpha: 1.0), name: "Purple",     value: 27),
+      LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.870588235, blue: 1.0, alpha: 1.0), name: "Light Blue", value: 40),
+      LabelledSegment(color: #colorLiteral(red: 0.392156863, green: 0.945098039, blue: 0.717647059, alpha: 1.0), name: "Green",      value: 25),
+      LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.392156863, blue: 1.0, alpha: 1.0), name: "Blue",       value: 38)
+    ]
   }
-
-  override func draw(_ rect: CGRect) {
-
-    // Get current context.
-    guard let ctx = UIGraphicsGetCurrentContext() else { return }
-
-    // Radius is the half the frame's width or height (whichever is smallest).
-    let radius = min(frame.width, frame.height) * 0.5
-
-    // Center of the view.
-    let viewCenter = bounds.center
 
   private func forEachSegment(
     _ body: (LabelledSegment, _ startAngle: CGFloat,
